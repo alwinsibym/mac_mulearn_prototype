@@ -3,118 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>FAQ Page</title>
-  <style>/* Add your previous navbar styles here */
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="FAQ.css">
+  <title>FAQ</title>
 
-    /* FAQ Page Styles */
-    .faq-page {
-      padding: 20px;
-    }
-    
-    .search-container {
-      position: relative;
-    }
-    
-    .search-container img {
-      width: 100%;
-      height: auto;
-    }
-    
-    .search-bar {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    
-    .search-bar input {
-      width: 70%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px 0 0 5px;
-    }
-    
-    .search-bar button {
-      width: 30%;
-      padding: 10px;
-      border: none;
-      border-radius: 0 5px 5px 0;
-      background-color: #2E85FE;
-      color: white;
-      cursor: pointer;
-    }
-    
-    .search-bar input, .search-bar button {
-      box-sizing: border-box;
-      font-size: 1em;
-    }
-    
-    /* Add any additional styles for the FAQ questions as needed */
-    </style>
 </head>
 <body>
-
+  <!--navbar-->
 <!-- Navbar -->
-<div class="navbar">
-  <div class="navbar-logo">
-    <a class="navbar-brand" href="#"><img src="images/logo/mu.png" alt="Your Logo"> MAC-μLearn</a>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="index.html"><img src="images/logo/mu.png" alt="Your Logo"> MAC-μLearn</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Execom</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Leaderboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Events</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="FAQ.html">FAQ</a>
+          <a class="dropdown-item" href="#">Gallery</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Tasks</a>
+        </div>
+      </li>
+    </ul>
   </div>
-  <div class="navbar-links">
-    <div class="navbar-link">
-      <a href="#">Home</a>
-    </div>
-    <div class="navbar-link">
-      <a href="#">About</a>
-    </div>
-    <div class="navbar-link navbar-dropdown">
-      <a href="#">Services</a>
-      <div class="navbar-dropdown-content">
-        <a href="#">Service 1</a>
-        <a href="#">Service 2</a>
-        <a href="#">Service 3</a>
-      </div>
-    </div>
-    <div class="navbar-link">
-      <a href="#">Contact</a>
+</nav>
+ <!-- Banner -->
+ <div class="banner">
+  <img src="images/b50affd3718ca93ad089217afbbb74fc-2107974588.jpg" alt="Banner Image">
+  <div class="banner-content">
+    <h1>How can we help you today..?</h1>
+    <div class="search-container">
+      <input type="text" id="faqSearchInput" placeholder="Search..." onkeypress="searchOnEnter(event)">
+      <button type="button" onclick="searchFAQ()"><img src="images/logo/glass.png" alt="Search"></button>
     </div>
   </div>
 </div>
 
-<!-- FAQ Page Content -->
-<div class="faq-page">
-  <!-- Search Bar and Image -->
-  <div class="search-container">
-    <img src="images/faq-header.jpg" alt="FAQ Header Image">
-    <div class="search-bar">
-      <input type="text" placeholder="Search...">
-      <button type="button">Search</button>
+<!-- FAQ Container -->
+<div class="faq-container">
+  <div id="userQuestions" class="user-questions">
+    <h2>Your Questions</h2>
+    <!-- User's asked questions will be dynamically added here -->
+  </div>
+
+  <div class="accordion-container">
+    <h2>Most Frequently Asked Questions</h2>
+    <div id="accordion" class="accordion">
+      <!-- Frequently asked questions will be dynamically added here -->
     </div>
   </div>
 
-  <!-- FAQ Questions -->
-  <section class="faq">
-    <div class="faq-content">
-      <div class="faq-item">
-        <h3>Question 1?</h3>
-        <div class="answer">
-          <p>Answer to Question 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <!-- Repeat the above structure for more questions -->
-
-      <!-- Example: Another FAQ Item -->
-      <div class="faq-item">
-        <h3>Question 2?</h3>
-        <div class="answer">
-          <p>Answer to Question 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="new-question-container">
+    <h2>Ask a New Question</h2>
+    <input type="text" id="newQuestion" placeholder="Type your question..." onkeypress="submitOnEnter(event)">
+    <button type="button" onclick="askNewQuestion()">Submit</button>
+  </div>
 </div>
 
-<script src="script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="FAQ.js"></script>
 </body>
 </html>
