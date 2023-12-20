@@ -1,0 +1,155 @@
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Semi-transparent black */
+    height: 80px; /* Adjust this value to make the navbar taller */
+  }
+  
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #2E85FE !important; /* Trusty Blue */
+    font-size: 1.5em; /* Adjust the font size as needed */
+  }
+  
+  .navbar-brand img {
+    height: 40px; /* Adjust the height of the logo as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .navbar-brand:hover,
+  .navbar-nav .nav-link:hover {
+    color: #AF2EE6 !important; /* Duke Purple */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff !important;
+  }
+  
+  .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Semi-transparent black */
+  }
+  
+  .dropdown-item {
+    color: #AF2EE6 !important; /* Duke Purple */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #AF2EE6 !important; /* Duke Purple */
+    color: white !important;
+  }
+  .navbar-toggler-icon {
+    background-color: #fff !important;
+  }
+  
+  .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Semi-transparent black */
+  }
+  
+  .dropdown-item {
+    color: #AF2EE6 !important; /* Duke Purple */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #AF2EE6 !important; /* Duke Purple */
+    color: white !important;
+  }
+  
+
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: 500px;
+  }
+  
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .banner-content h1 {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .search-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .search-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .search-container button {
+    background-color: #CCCCCC;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+  }
+  
+  .search-container button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .user-questions h2,
+  .accordion-container h2,
+  .new-question-container h2 {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .user-questions,
+  .accordion-container,
+  .new-question-container {
+    margin-bottom: 20px;
+  }
+  
+  .user-questions input,
+  .new-question-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  .user-questions button,
+  .new-question-container button {
+    background-color: #2E85FE;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
